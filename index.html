@@ -1,46 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Career Navigator</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="AI-Powered Student Career Pathway Navigator: Discover your optimal career using AI-driven recommendations.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Student Career Navigator</title>
 </head>
-<body class="bg-light">
-<div class="container mt-5">
-    <div class="card shadow p-4">
-        <h2 class="text-center mb-4">AI-Powered Student Career Navigator</h2>
-
-        {% if result %}
-        <div class="alert alert-success">
-            <strong>Recommended Career:</strong> {{ result }}
-        </div>
-        {% endif %}
-
-        <form method="POST">
-            <label>Math Skill (1-5)</label>
-            <input type="number" name="math" min="1" max="5" class="form-control mb-2" required>
-
-            <label>Coding Skill (1-5)</label>
-            <input type="number" name="coding" min="1" max="5" class="form-control mb-2" required>
-
-            <label>Creativity (1-5)</label>
-            <input type="number" name="creativity" min="1" max="5" class="form-control mb-2" required>
-
-            <label>Communication (1-5)</label>
-            <input type="number" name="communication" min="1" max="5" class="form-control mb-2" required>
-
-            <button class="btn btn-primary w-100 mt-3">Predict Career</button>
-        </form>
-
-        {% if user_skills %}
-        <h5 class="mt-4">Your Skills</h5>
-        <ul>
-            {% for key, value in user_skills.items() %}
-                <li>{{ key }}: {{ value }}</li>
-            {% endfor %}
-        </ul>
-        <a href="/dashboard" class="btn btn-info mt-2">View Dashboard</a>
-        {% endif %}
-    </div>
-</div>
+<body>
+    <h1>AI-Powered Student Career Navigator</h1>
+    <p>
+        Enter your skills below and let our AI recommend the best career pathways for you!
+    </p>
+    <form id="career-form">
+        <label>Math Skill (1-5):</label><input type="number" min="1" max="5" name="math" required><br>
+        <label>Coding Skill (1-5):</label><input type="number" min="1" max="5" name="coding" required><br>
+        <label>Creativity (1-5):</label><input type="number" min="1" max="5" name="creativity" required><br>
+        <label>Communication (1-5):</label><input type="number" min="1" max="5" name="communication" required><br>
+        <button type="submit">Predict Career</button>
+    </form>
+    <div id="result"></div>
+    <footer>
+        <p>This tool uses AI (Python ML model/API) to analyze inputs and predict careers such as Software Engineer, Designer, Marketer, and more.</p>
+    </footer>
+    <script>
+    // Example script: You should connect this with your backend API
+    document.getElementById('career-form').onsubmit = function(e) {
+        e.preventDefault();
+        // Collect form data
+        const data = {
+            math: parseInt(e.target.math.value, 10),
+            coding: parseInt(e.target.coding.value, 10),
+            creativity: parseInt(e.target.creativity.value, 10),
+            communication: parseInt(e.target.communication.value, 10)
+        };
+        // Simulated result (replace with real API call)
+        let prediction = '';
+        if (data.coding >= 4 && data.math >= 4) prediction = 'Software Engineer';
+        else if (data.creativity >= 4 && data.communication >= 4) prediction = 'Marketing Specialist or Designer';
+        else prediction = 'Explore more skill areas!';
+        document.getElementById('result').innerText = 'AI suggests: ' + prediction;
+    }
+    </script>
 </body>
 </html>
