@@ -1,113 +1,35 @@
+# AI-Powered Student Career Navigator
 
-# AI-Powered Student Career Pathway Navigator
+This project helps students identify the most suitable career pathway using AI-driven recommendations. By entering core skills (Math, Coding, Creativity, Communication), students get instant suggestions for potential careers best aligned with their strengths.
 
-## 📖 Project Overview
-The **AI-Powered Student Career Pathway Navigator** is a comprehensive web application developed for the **Build and Blog Marathon 2025**. This platform addresses the critical disconnect between academic education and industry requirements. By leveraging Artificial Intelligence and Machine Learning, the application analyzes a student's unique profile—including technical skills, soft skills, and interests—to recommend personalized career trajectories.
+## Features
 
-Unlike generic career quizzes, this system utilizes data-driven insights to visualize skill gaps, projected salary growth, and learning roadmaps, empowering students to make informed decisions about their professional future.
+- Enter your skill ratings (1-5) in Math, Coding, Creativity, and Communication
+- Click 'Predict Career' to get an AI-generated career suggestion based on the entered data
+- Simple, responsive web interface for quick access
 
-## 🌟 Key Features
-* **AI-Driven Recommendations:** Utilizes Natural Language Processing (NLP) and similarity matching algorithms to map user inputs against a robust dataset of career profiles.
-* **Interactive Dashboards:** Integrated **Plotly** visualizations provide dynamic charts showing market demand, salary trends, and skill overlap analysis.
-* **Skill Gap Analysis:** Automatically identifies missing competencies for a target role and suggests specific areas for improvement.
-* **Responsive Design:** A fully responsive frontend built with HTML5 and CSS3 ensures accessibility across desktop and mobile devices.
-* **Scalable Architecture:** Designed with a microservices mindset, containerized via Docker, and deployed on Google Cloud Run for high availability.
+## How It Works
 
-## 🛠️ Technical Architecture & Stack
+The frontend collects skill scores from users. On submit, it sends the data to a Python backend (Flask/FastAPI) which uses a machine learning model or simple rules-based AI to predict suitable careers. The prediction logic can be further improved using larger datasets.
 
-### Backend Infrastructure
-* **Core Framework:** **Python 3.9+** with **Flask** (acting as the REST API and web server).
-* **Server:** **Gunicorn** (Production-grade WSGI server optimized for containerized environments).
-* **Routing:** Custom route handlers in `app.py` manage form submissions, API endpoints, and page rendering.
+## Tech Stack
 
-### Data Science & Machine Learning
-* **Data Processing:** **Pandas** and **NumPy** are used for cleaning and structuring the career dataset (`data.csv`).
-* **Algorithm:**
-    * **TF-IDF Vectorization:** Converts text-based skill descriptions into numerical vectors.
-    * **Cosine Similarity:** Calculates the mathematical distance between the student's skill vector and career profile vectors to determine the best fit.
+- Frontend: HTML, CSS, JavaScript (or React)
+- Backend: Python (Flask, FastAPI, or similar)
+- AI Logic: ML model or rules-based approach
 
-### Frontend Interface
-* **Templating:** **Jinja2** (server-side rendering) for dynamic content injection.
-* **Visualization:** **Plotly.js** (JSON serialization via Flask) to render interactive graphs directly in the browser.
-* **Styling:** Custom CSS with Flexbox/Grid for layout management.
+## Getting Started
 
-### DevOps & Cloud Deployment
-* **Containerization:** **Docker** is used to package the application and its dependencies, ensuring consistency across development and production environments.
-* **Cloud Provider:** **Google Cloud Run** (Serverless).
-* **Version Control:** Git & GitHub for source code management.
+1. Clone this repo.
+2. Run pip install -r requirements.txt to install dependencies.
+3. Start the backend server: python app.py
+4. Open index.html in your browser.
+5. Enter skill scores and click 'Predict Career'.
 
-## 📂 Repository Structure
-This repository contains the full source code for the application:
+## Example
 
-```text
-BNB/
-├── app.py                # Main application logic, route definitions, and ML inference
-├── requirements.txt      # List of Python dependencies (Flask, Pandas, Scikit-learn, etc.)
-├── Dockerfile            # Instructions for building the container image for Cloud Run
-├── data/
-│   └── career_data.csv   # Dataset containing career paths, required skills, and salary info
-├── static/
-│   ├── css/
-│   │   └── style.css     # Custom stylesheets for the user interface
-│   └── images/           # Assets and logos
-├── templates/
-│   ├── index.html        # Landing page with student input form
-│   ├── dashboard.html    # Results page displaying charts and recommendations
-│   └── layout.html       # Base Jinja2 template for consistent header/footer
-└── README.md             # Project documentation
-````
+| Math | Coding | Creativity | Communication | Prediction       |
+|------|--------|------------|---------------|------------------|
+| 5    | 5      | 3          | 2             | Software Engineer|
+| 2    | 3      | 5          | 5             | Marketing       |
 
-## 🚀 Local Installation & Setup
-
-Follow these steps to run the project on your local machine:
-
-1.  **Clone the Repository:**
-
-    ```bash
-    git clone [https://github.com/tej321vs/BNB.git](https://github.com/tej321vs/BNB.git)
-    cd BNB
-    ```
-
-2.  **Set Up Virtual Environment:**
-
-    ```bash
-    python -m venv venv
-    # Activate:
-    # Windows: venv\Scripts\activate
-    # Mac/Linux: source venv/bin/activate
-    ```
-
-3.  **Install Dependencies:**
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **Run the Application:**
-
-    ```bash
-    python app.py
-    ```
-
-    Open your browser and navigate to `http://127.0.0.1:5000`.
-
-## ☁️ Deployment Details
-
-This application is live and deployed using **Google Cloud Run**.
-
-  * **Build Method:** Source-based deployment via Google Cloud Build.
-  * **Scaling:** Configured to auto-scale based on traffic demand.
-  * **Endpoint:** Exposed via a secure HTTPS URL provided by Cloud Run.
-
-## 🔮 Future Enhancements
-
-  * Integration with LinkedIn API for automated profile importing.
-  * Expansion of the dataset to include global market trends.
-  * User authentication system to save progress and roadmaps.
-
-
-
-*Submitted by MADDI VENKATA TEJA for the Build and Blog Marathon 2025.*
-
-```
-```
