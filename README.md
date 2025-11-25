@@ -1,6 +1,7 @@
+
 # AI-Powered Student Career Pathway Navigator
 
-## 📖 Project Overview 
+## 📖 Project Overview
 The **AI-Powered Student Career Pathway Navigator** is a comprehensive web application developed for the **Build and Blog Marathon 2025**. This platform addresses the critical disconnect between academic education and industry requirements. By leveraging Artificial Intelligence and Machine Learning, the application analyzes a student's unique profile—including technical skills, soft skills, and interests—to recommend personalized career trajectories.
 
 Unlike generic career quizzes, this system utilizes data-driven insights to visualize skill gaps, projected salary growth, and learning roadmaps, empowering students to make informed decisions about their professional future.
@@ -54,3 +55,59 @@ BNB/
 │   ├── dashboard.html    # Results page displaying charts and recommendations
 │   └── layout.html       # Base Jinja2 template for consistent header/footer
 └── README.md             # Project documentation
+````
+
+## 🚀 Local Installation & Setup
+
+Follow these steps to run the project on your local machine:
+
+1.  **Clone the Repository:**
+
+    ```bash
+    git clone [https://github.com/tej321vs/BNB.git](https://github.com/tej321vs/BNB.git)
+    cd BNB
+    ```
+
+2.  **Set Up Virtual Environment:**
+
+    ```bash
+    python -m venv venv
+    # Activate:
+    # Windows: venv\Scripts\activate
+    # Mac/Linux: source venv/bin/activate
+    ```
+
+3.  **Install Dependencies:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Run the Application:**
+
+    ```bash
+    python app.py
+    ```
+
+    Open your browser and navigate to `http://127.0.0.1:5000`.
+
+## ☁️ Deployment Details
+
+This application is live and deployed using **Google Cloud Run**.
+
+  * **Build Method:** Source-based deployment via Google Cloud Build.
+  * **Scaling:** Configured to auto-scale based on traffic demand.
+  * **Endpoint:** Exposed via a secure HTTPS URL provided by Cloud Run.
+
+## 🔮 Future Enhancements
+
+  * Integration with LinkedIn API for automated profile importing.
+  * Expansion of the dataset to include global market trends.
+  * User authentication system to save progress and roadmaps.
+
+
+
+*Submitted by MADDI VENKATA TEJA for the Build and Blog Marathon 2025.*
+
+```
+```
