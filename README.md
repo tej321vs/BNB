@@ -1,6 +1,6 @@
 # AI-Powered Student Career Pathway Navigator
 
-## 📖 Project Overview
+## 📖 Project Overview 
 The **AI-Powered Student Career Pathway Navigator** is a comprehensive web application developed for the **Build and Blog Marathon 2025**. This platform addresses the critical disconnect between academic education and industry requirements. By leveraging Artificial Intelligence and Machine Learning, the application analyzes a student's unique profile—including technical skills, soft skills, and interests—to recommend personalized career trajectories.
 
 Unlike generic career quizzes, this system utilizes data-driven insights to visualize skill gaps, projected salary growth, and learning roadmaps, empowering students to make informed decisions about their professional future.
