@@ -9,7 +9,6 @@ import json
 
 app = Flask(__name__)
 
-# Sample career dataset
 careers = pd.DataFrame({
     "career": ["Data Scientist", "Software Engineer", "UI/UX Designer", "Network Engineer"],
     "skill_level_math": [5, 4, 2, 3],
@@ -32,10 +31,10 @@ def home():
     result = None
     user_skills = {}
     if request.method == "POST":
-        math = int(request.form.get("math"))
-        coding = int(request.form.get("coding"))
-        creativity = int(request.form.get("creativity"))
-        communication = int(request.form.get("communication"))
+        math = int(request.form.get("math", 0))
+        coding = int(request.form.get("coding", 0))
+        creativity = int(request.form.get("creativity", 0))
+        communication = int(request.form.get("communication", 0))
 
         user_input = np.array([[math, coding, creativity, communication]])
         prediction = model.predict(user_input)[0]
@@ -53,7 +52,7 @@ def home():
 @app.route("/dashboard")
 def dashboard():
     fig = px.bar(careers, x="career",
-                 y=["skill_level_math","skill_level_coding","skill_level_creativity","skill_level_communication"],
+                 y=["skill_level_math", "skill_level_coding", "skill_level_creativity", "skill_level_communication"],
                  barmode='group',
                  title="Career Skill Comparison")
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
